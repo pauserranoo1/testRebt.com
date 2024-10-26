@@ -1,0 +1,159 @@
+/* Reset básico para eliminar márgenes y rellenos predeterminados */
+* {
+    margin: 0;          /* Elimina todos los márgenes */
+    padding: 0;         /* Elimina todos los rellenos */
+    box-sizing: border-box;  /* Hace que el padding y el borde no aumenten el tamaño total */
+}
+
+/* Estilos base para el cuerpo y html */
+body, html {
+    font-family: 'Helvetica', sans-serif;  /* Establece Helvetica como fuente principal */
+    /* Crea un degradado de fondo que va de oscuro a más oscuro y vuelve a oscuro */
+    background: linear-gradient(
+        180deg,
+        #1a1a1a 0%,      /* Color inicial del gradiente */
+        #121212 20%,     /* Segundo color al 20% */
+        #1f1f1f 80%,     /* Tercer color al 80% */
+        #1a1a1a 100%     /* Color final */
+    );
+    color: #fff;         /* Color de texto blanco */
+    height: 100vh;       /* Altura igual al 100% de la ventana del navegador */
+    overflow-y: auto;    /* Oculta cualquier contenido que se salga de la ventana */
+}
+
+/* Estilos del encabezado */
+header {
+    background-color: #1a1a1a;  /* Color de fondo oscuro para el header */
+    padding: 1vh 30px;          /* Relleno vertical del 1% de la altura de la ventana y 30px horizontal */
+    height: 8vh;                /* Altura del 8% de la altura de la ventana */
+}
+
+/* Estilos de la barra de navegación */
+nav {
+    display: flex;                    /* Usa flexbox para el diseño */
+    justify-content: space-between;   /* Distribuye el espacio entre los elementos */
+    align-items: center;              /* Centra los elementos verticalmente */
+    width: 100%;                      /* Ocupa todo el ancho disponible */
+    height: 100%;                     /* Ocupa toda la altura disponible */
+}
+/*Estilos que se le dan al titulo del header*/
+.logo{
+    align-items: center;
+    letter-spacing: 8px;
+}
+
+/* Estilos de la lista de navegación */
+nav ul {
+    list-style: none;    /* Elimina los puntos de la lista */
+    display: flex;       /* Usa flexbox para alinear horizontalmente */
+}
+
+nav ul li {
+    margin-left: 25px;   /* Espacio entre elementos de la lista */
+}
+
+/* Estilos de los enlaces de navegación */
+nav ul li a {
+    text-decoration: none;     /* Elimina el subrayado de los enlaces */
+    color: #ffffff;              /* Color blanco para el texto */
+    font-weight: bold;        /* Texto en negrita */
+    transition: color 0.4s;   /* Transición suave para el cambio de color */
+}
+
+/* Efecto al pasar el mouse sobre los enlaces */
+nav ul li a:hover {
+    color: #ffae00;     /* Cambia a color lila al pasar el mouse */
+}
+
+/* Sección principal de la página con los creadores */
+.about-hero {
+    display: flex;
+    justify-content: space-around; /* Distribuye los contenedores de los creadores */
+    align-items: flex-start;
+    padding: 5vh 4vw;
+    background-color: #1a1a1a; /* Fondo oscuro */
+    height: auto; /* Altura automática para que se ajuste al contenido */
+}
+
+/* Estilos para cada contenedor de creador */
+.creator-container {
+    width: 40%;
+    padding: 2vh 2vw;
+    border: 2px solid #ffdd00; /* Borde amarillo */
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center; /* Centra el texto dentro de cada contenedor */
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+}
+
+/* Efecto hover */
+.creator-container:hover {
+    transform: scale(1.1); /* Eleva ligeramente el contenedor al pasar el ratón */
+    transition: transform 1s;
+    box-shadow: 0 0px 20px rgba(255, 221, 0, 0.3); /* Sombra amarilla suave */
+}
+
+/* Pie de página */
+footer {
+    height: 5vh;
+    background-color: #1a1a1a;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    color: #ffffff;
+    font-size: 0.9vw;
+}
+
+.creator-container {
+    display: flex;                  /* Flexbox para alinear el contenido */
+    flex-direction: column;         /* Asegura que los elementos se apilen verticalmente */
+    align-items: center;            /* Centra horizontalmente el contenido */
+    justify-content: center;        /* Centra el contenido verticalmente si es necesario */
+    width: 40%;
+    padding: 2vh 2vw;
+    border: 2px solid #ffdd00;      /* Borde amarillo */
+    border-radius: 10px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;             /* Centra el texto dentro de cada contenedor */
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+}
+
+
+/* Responsividad para pantallas móviles */
+@media (max-width: 768px) {
+    .about-hero {
+        flex-direction: column; /* Disposición en columna para pantallas pequeñas */
+        align-items: center;
+    }
+
+    .creator-container {
+        width: 90%; /* Ocupa el 90% del ancho en pantallas pequeñas */
+        text-align: center;
+        margin-bottom: 2vh;
+    }
+
+    .logo {
+        font-size: 4vw; /* Ajusta el tamaño del logo para pantallas pequeñas */
+    }
+
+    nav ul {
+        flex-direction: column;
+        position: static; /* Asegura alineación correcta en móvil */
+        gap: 1vh;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+}
